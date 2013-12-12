@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'anything/gorepo/version'
+require 'anything-gorepo/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "anything-gorepo"
-  spec.version       = Anything::Gorepo::VERSION
+  spec.version       = AnythingGorepo::VERSION
   spec.authors       = ["Takatoshi Matsumoto"]
   spec.email         = ["toqoz403@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}

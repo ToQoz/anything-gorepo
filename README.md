@@ -1,4 +1,4 @@
-# Anything::Gorepo
+# AnythingGorepo
 
 TODO: Write a gem description
 

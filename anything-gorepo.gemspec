@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = AnythingGorepo::VERSION
   spec.authors       = ["Takatoshi Matsumoto"]
   spec.email         = ["toqoz403@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Find local go repositories in $GOPATH by anything interface.}
+  spec.summary       = %q{People who are tired of finding a golang repository in local! This is solution for it.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

@@ -1,5 +1,8 @@
 require "anything-gorepo/version"
+require "anything-gorepo/finder"
 
 module AnythingGorepo
-  # Your code goes here...
+  def self.find src
+    File.join(src, Finder.new(src).find)
+  end
 end

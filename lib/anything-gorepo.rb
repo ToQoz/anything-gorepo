@@ -1,5 +1,4 @@
 require "anything-gorepo/version"
-require "anything-gorepo/finder"
 
 module AnythingGorepo
   def self.find paths

@@ -13,11 +13,16 @@ end
 
 require 'ruby-anything'
 
-gopath = ENV['GOPATH'].dup
-
-unless gopath
-  STDERR.puts e.message
-  exit 1
+unless ENV['PATH'].split(':').any? { |path| File.exists?(File.join(path, 'go')) }
+  STDERR.puts 'go should be in $PATH'
 end
 
-STDOUT.puts AnythingGorepo.find(File.join(gopath, 'src'))
+goenv = `go env`.split("\n")
+rgoroot = goenv.grep(/^GOROOT/).first
+rgopath = goenv.grep(/^GOPATH/).first
+
+find_paths = []
+find_paths << File.join(rgoroot.gsub(/GOROOT="(.+)"/, '\1'), 'src', 'pkg') if rgoroot
+find_paths << File.join(rgopath.gsub(/GOPATH="(.+)"/, '\1'), 'src') if rgopath
+
+STDOUT.puts AnythingGorepo.find(find_paths)

@@ -30,10 +30,12 @@ module AnythingGorepo
   private
 
   def self.directories path
+    return [] if Dir.glob(File.join(path, "**/*.go")).empty?
+
     Dir.entries(path).select do |filename|
       File.directory?(File.join(path, filename))
     end.select do |filename|
-      !filename.start_with?('.') && Dir.glob("**/*.go").empty?
+      !filename.start_with?('.')
     end
   end
 end
